@@ -22,11 +22,11 @@ pipeline {
                      sh "mvn install"
                 }
             }
-            post {
-                always {
-                    junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: false
-                }
-            }
+//             post {
+//                 always {
+//                     junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: false
+//                 }
+//             }
         }
 
         stage('Building image') {
