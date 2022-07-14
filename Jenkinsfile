@@ -18,6 +18,7 @@ pipeline {
         stage('maven build') {
              steps {
                 withMaven ( maven: 'maven') {
+
                      bat "mvn clean"
                      bat "mvn install"
                 }
@@ -50,7 +51,7 @@ pipeline {
        stage('Kubernates Rollout') {
             steps {
 
-                  sh "kubectl apply -f ./k8s/deployment.yaml -n corso"
+                  bat "kubectl apply -f ./k8s/deployment.yaml -n corso"
 
             }
         }
