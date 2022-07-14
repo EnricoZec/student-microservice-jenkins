@@ -18,8 +18,8 @@ pipeline {
         stage('maven build') {
              steps {
                 withMaven ( maven: 'maven') {
-                     sh "mvn clean"
-                     sh "mvn install"
+                     bat "mvn clean"
+                     bat "mvn install"
                 }
             }
 //             post {
